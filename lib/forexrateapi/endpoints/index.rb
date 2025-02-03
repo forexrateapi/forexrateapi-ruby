@@ -22,6 +22,16 @@ module ForexRateAPI
       get(date, options)
     end
 
+    def ohlc(base = nil, currency = nil, date = nil, date_type = nil)
+      options = removeEmpty({
+        base: base,
+        currency: currency,
+        date: date,
+        date_type: date_type
+      })
+      get('ohlc', options)
+    end
+
     def convert(from_currency = nil, to_currency = nil, amount = nil, date = nil)
       options = removeEmpty({
           'from': from_currency,
@@ -50,6 +60,10 @@ module ForexRateAPI
           'currencies': (currencies || []).join(',')
       })
       get('change', options)
+    end
+
+    def usage
+      get('usage')
     end
 
     private

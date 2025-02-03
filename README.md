@@ -52,6 +52,20 @@ client.fetchHistorical(date='2021-04-05', base='USD', currencies=['AUD', 'CAD', 
 [Link](https://forexrateapi.com/documentation#api_historical)
 
 ---
+#### ohlc(base, currency, date, date_type)
+
+- `base` <[string]> Optional. Pass in a base currency, defaults to USD.
+- `currency` <[string]> Required. Specify currency you would like to get OHLC for.
+- `date` <[string]> Required. Specify date to get OHLC for specific date using format `YYYY-MM-DD`.
+- `date_type` <[string]> Optional. Pass in a date type, overrides date parameter if passed in.
+
+```ruby
+client.ohlc(base='USD', currency='EUR', date='2021-04-05', date_type=nil)
+```
+
+[Link](https://forexrateapi.com/documentation#api_ohlc)
+
+---
 #### convert(from_currency, to_currency, amount, date)
 
 - `from_currency` <[string]> Optional. Pass in a base currency, defaults to USD.
@@ -94,9 +108,16 @@ client.change(start_date='2021-04-05', end_date='2021-04-06', base='USD', curren
 [Link](https://forexrateapi.com/documentation#api_change)
 
 ---
+#### usage()
+
+```ruby
+client.usage()
+```
+
+[Link](https://forexrateapi.com/documentation#api_usage)
+
+---
 **[Official documentation](https://forexrateapi.com/documentation)**
-
-
 ---
 ## FAQ
 
